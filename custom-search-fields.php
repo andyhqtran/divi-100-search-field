@@ -15,14 +15,10 @@
 * License: GPL3
 */
 
-add_action( 'wp_enqueue_scripts', 'add_custom_search_fields_scripts' );
-
 function add_custom_search_fields_scripts() {
-  wp_enqueue_script(
-    'custom-search-fields',
-    plugin_dir_url( __FILE__ ) . 'js/custom-search-fields.js',
-    array( 'jquery' )
-  );
+  wp_enqueue_script( 'custom-search-fields', plugin_dir_url( __FILE__ ) . 'js/custom-search-fields.js', array( 'jquery' ), '0.0.1', true );
 }
+
+add_action( 'wp_enqueue_scripts', 'add_custom_search_fields_scripts' );
 
 ?>
