@@ -10,11 +10,11 @@ jQuery(document).ready(function ($) {
     .html($(".et-search-form"));
 
   // Appends close button to search
-  $(".et_custom_search").prepend("<span class='et_custom_search_close'>x</span>")
+  $(".et_custom_search").prepend("<span class='et_custom_search_close'></span>")
 
   // Close button removes visible class and adds hide class
   $(".et_custom_search").on("click", ".et_custom_search_close", function () {
-    $(".et_custom_search").removeClass("et_custom_search_visible").addClass(".et_custom_search_hide");
+    $(".et_custom_search").removeClass("et_custom_search_visible").addClass("et_custom_search_hide");
   });
 
   // Disables default click events
