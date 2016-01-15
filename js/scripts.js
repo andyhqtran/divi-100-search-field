@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
   $(".et_search_outer")
     .insertAfter("#page-container")
     .removeClass("et_search_outer")
-    .addClass("et_custom_search")
+    .addClass("et_custom_search et_custom_search_hide")
     .html($(".et-search-form"));
 
   // Appends close button to search
