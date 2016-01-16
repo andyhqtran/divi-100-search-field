@@ -74,7 +74,7 @@ class ET_Divi_100_Custom_Search_Fields {
 			$this->main_prefix . 'options',
 			__( 'Custom Search Fields' ),
 			__( 'Custom Search Fields' ),
-			'switch_theme',
+			'switch_themes',
 			$this->plugin_prefix . 'options',
 			array( $this, 'render_options_page' )
 		);
