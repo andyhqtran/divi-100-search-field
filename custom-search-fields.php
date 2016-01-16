@@ -16,9 +16,9 @@
 */
 
 /**
- * Load Divi 1000 Setup
+ * Load Divi 100 Setup
  */
-require_once( plugin_dir_path( __FILE__ ) . 'divi-1000-setup.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'divi-100-setup.php' );
 
 /**
  * Load Custom Search Fields
@@ -47,7 +47,7 @@ class ET_Divi_100_Custom_Search_Fields {
 	 * Constructor
 	 */
 	private function __construct(){
-		$this->main_prefix   = 'et_divi_1000_';
+		$this->main_prefix   = 'et_divi_100_';
 		$this->plugin_slug   = 'custom_search_fields';
 		$this->plugin_prefix = "{$this->main_prefix}{$this->plugin_slug}_";
 
@@ -60,7 +60,7 @@ class ET_Divi_100_Custom_Search_Fields {
 	 * @return void
 	 */
 	private function init(){
-		add_action( 'admin_menu',         array( $this, 'add_submenu' ), 30 ); // Make sure the priority is higher than Divi 1000's add_menu()
+		add_action( 'admin_menu',         array( $this, 'add_submenu' ), 30 ); // Make sure the priority is higher than Divi 100's add_menu()
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ) );
 		add_filter( 'body_class',         array( $this, 'body_class' ) );
 	}
