@@ -49,7 +49,7 @@ class ET_Divi_100_Custom_Search_Fields {
 	private function __construct(){
 		$this->main_prefix   = 'et_divi_100_';
 		$this->plugin_slug   = 'custom_search_fields';
-		$this->plugin_prefix = "{$this->main_prefix}{$this->plugin_slug}_";
+		$this->plugin_prefix = "{$this->main_prefix}{$this->plugin_slug}-";
 
 		$this->init();
 	}
@@ -151,7 +151,7 @@ class ET_Divi_100_Custom_Search_Fields {
 											'<option value="%1$s" %3$s>%2$s</option>',
 											esc_attr( $style_id ),
 											esc_html( $style ),
-											$csf_style === $style_id ? 'selected="selected"' : ''
+											"{$csf_style}" === "{$style_id}" ? 'selected="selected"' : ''
 										);
 									}
 									?>
@@ -182,11 +182,11 @@ class ET_Divi_100_Custom_Search_Fields {
 	 */
 	function get_styles() {
 		return apply_filters( $this->plugin_prefix . 'styles', array(
-			''      => __( 'Default' ),
-			'one'   => __( 'One' ),
-			'two'   => __( 'Two' ),
-			'three' => __( 'Three' ),
-			'four'  => __( 'Four' ),
+			''    => __( 'Default' ),
+			'1'   => __( 'One' ),
+			'2'   => __( 'Two' ),
+			'3'   => __( 'Three' ),
+			'4'   => __( 'Four' ),
 		) );
 	}
 
@@ -210,7 +210,7 @@ class ET_Divi_100_Custom_Search_Fields {
 
 		// Assign specific class to <body> if needed
 		if ( '' !== $selected_style ) {
-			$classes[] = sanitize_title(  $this->plugin_prefix . $selected_style );
+			$classes[] = esc_attr(  $this->plugin_prefix . '-style-' . $selected_style );
 		}
 
 		return $classes;
