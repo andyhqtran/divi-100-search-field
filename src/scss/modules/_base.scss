@@ -1,0 +1,11 @@
+@import "functions";
+@import "mixins";
+@import "colors";
+
+// Total Styles
+$style: 5;
+
+// Divi 100 Settings
+$prefix-plugin: "custom_search_fields";
+$prefix: ".et_divi_100_" + $prefix-plugin;
+$prefix-style: $prefix + "--style-";

@@ -1,0 +1,5 @@
+@mixin style($style) {
+  #{$prefix + $prefix-style + $style + " " + $prefix} {
+    @content;
+  }
+}
