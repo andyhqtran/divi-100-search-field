@@ -8,6 +8,10 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
 
+    # Shell Task
+    shell:
+      npm:
+        command : 'npm install'
 
     # Sass Task
     sass:
@@ -33,6 +37,10 @@ module.exports = (grunt) ->
           grunt.log.writeln('Waiting...')
         event: ['all']
         interrupt: true
+
+      npm:
+        files: ['package.json']
+        task: ['shell:npm']
 
       configFiles:
         files: ['Gruntfile.coffee']
