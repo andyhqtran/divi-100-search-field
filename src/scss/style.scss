@@ -8,6 +8,10 @@
   left: 0;
   width: 100%;
   transition: 0.3s ease;
+
+  .admin-bar & {
+    top: 32px;
+  }
 }
 
 /* Hide Modifier */
@@ -77,3 +81,13 @@
 
 /* Style 4 */
 @import "partials/style-4";
+
+.et_fullwidth_nav .et-search-form,
+.search-form {
+  right: 0 !important;
+
+  .et-search-field {
+    right: 0 !important;
+    bottom: auto;
+  }
+}
