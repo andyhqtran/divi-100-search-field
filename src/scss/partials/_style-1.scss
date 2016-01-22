@@ -4,15 +4,8 @@
   min-height: 200px;
 
   input.et-search-field {
-    width: 100%;
-    box-sizing: border-box;
-    right: 0;
-    font-size: 24px;
-    border-bottom: 0 !important;
-
-    &:focus {
-      box-shadow: none !important;
-    }
+    font-size: rem(24);
+    padding: rem(40) !important;
   }
 
   &:after {

@@ -14,7 +14,9 @@ jQuery(document).ready(function ($) {
 
   // Close button removes visible class and adds hide class
   $(".et_divi_100_custom_search_fields").on("click", ".et_divi_100_custom_search_fields__close", function () {
-    $(".et_divi_100_custom_search_fields").removeClass("et_divi_100_custom_search_fields--visible").addClass("et_divi_100_custom_search_fields--hide");
+    $(".et_divi_100_custom_search_fields")
+      .removeClass("et_divi_100_custom_search_fields--visible")
+      .addClass("et_divi_100_custom_search_fields--hide");
   });
 
   // Disables default click events
@@ -27,5 +29,19 @@ jQuery(document).ready(function ($) {
     $(".et_divi_100_custom_search_fields")
       .removeClass("et_divi_100_custom_search_fields--hide")
       .addClass("et_divi_100_custom_search_fields--visible");
+
+    removal();
   });
+
+  // Removes search if clicked outside container
+  function removal() {
+    if ($('.et_divi_100_custom_search_fields').hasClass('et_divi_100_custom_search_fields--visible')) {
+      $("body *").not(".et_divi_100_custom_search_fields, .et_divi_100_custom_search_fields *, #et_search_icon").click(function () {
+
+        $(".et_divi_100_custom_search_fields")
+          .removeClass("et_divi_100_custom_search_fields--visible")
+          .addClass("et_divi_100_custom_search_fields--hide");
+      });
+    }
+  }
 })

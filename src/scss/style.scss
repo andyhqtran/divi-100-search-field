@@ -2,12 +2,16 @@
 
 /* Search Field */
 #{$prefix} {
-  z-index: 99999;
+  z-index: 999999;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   transition: 0.3s ease;
+
+  // display: block !important; // DEV
+  // visibility: visible !important; // DEV
+  // opacity: 1 !important; // DEV
 
   .admin-bar & {
     top: 32px;
@@ -89,5 +93,12 @@
   .et-search-field {
     right: 0 !important;
     bottom: auto;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0 !important;
+
+    &:focus {
+      box-shadow: none !important;
+    }
   }
 }
