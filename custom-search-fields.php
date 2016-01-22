@@ -222,7 +222,7 @@ class ET_Divi_100_Custom_Search_Fields {
 	 */
 	function enqueue_frontend_scripts() {
 		wp_enqueue_style( 'custom-search-fields', plugin_dir_url( __FILE__ ) . 'css/style.css' );
-		wp_enqueue_script( 'custom-search-fields', plugin_dir_url( __FILE__ ) . 'js/scripts.js', array( 'jquery' ), '0.0.1', true );
+		wp_enqueue_script( 'custom-search-fields', plugin_dir_url( __FILE__ ) . 'js/scripts.js', array( 'jquery', 'divi-custom-script' ), '0.0.1', true );
 	}
 }
 ET_Divi_100_Custom_Search_Fields::instance();
