@@ -1,5 +1,5 @@
 @include style(1) {
-  background: rgba($white, 0.9);
+  background: $white;
   height: 20%;
   min-height: 200px;
 
@@ -15,9 +15,9 @@
     left: 0;
     display: block;
     width: 140%;
-    background: 0;
-    height: 40px;
+    background: $white;
+    height: 100px;
     transform: translateX(-20%);
-    box-shadow: 0 20px 40px $white;
+    box-shadow: 0 40px 40px $white;
   }
 }

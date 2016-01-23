@@ -1,5 +1,10 @@
 jQuery(document).ready(function ($) {
 
+  var searchFields = $(".et_divi_100_custom_search_fields"),
+    searchClose = $("et_divi_100_custom_search_fields--close"),
+    searchHide = $("et_divi_100_custom_search_fields--hide");
+  searchShow = $("et_divi_100_custom_search_fields--visible");
+
   // Appends current search to body
   // Replaces .et_search_outer with .et_divi_100_custom_search_fields
   // Removes unnessary div
@@ -29,6 +34,10 @@ jQuery(document).ready(function ($) {
     $(".et_divi_100_custom_search_fields")
       .removeClass("et_divi_100_custom_search_fields--hide")
       .addClass("et_divi_100_custom_search_fields--visible");
+
+    setTimeout(function () {
+      $(".et-search-field").focus();
+    }, 100);
 
     removal();
   });

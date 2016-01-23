@@ -1,0 +1,9 @@
+@include style(2) {
+  background: rgba($white, 0.9);
+  height: 100%;
+
+  input.et-search-field {
+    font-size: rem(24);
+    padding: rem(40) !important;
+  }
+}

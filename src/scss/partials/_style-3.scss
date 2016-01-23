@@ -1,0 +1,28 @@
+@include style(3) {
+  background: rgba($white, 1);
+  height: 20%;
+  min-height: 200px;
+
+  input.et-search-field {
+    display: block;
+    position: relative;
+    background: rgba($black, 0.1) !important;
+    width: 80%;
+    margin: 40px auto;
+    font-size: rem(24);
+    padding: rem(40) !important;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 140%;
+    background: 0;
+    height: 40px;
+    transform: translateX(-20%);
+    box-shadow: 0 20px 40px $white;
+  }
+}
