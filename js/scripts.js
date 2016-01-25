@@ -2,8 +2,8 @@ jQuery(document).ready(function ($) {
 
   var searchFields = $(".et_divi_100_custom_search_fields"),
     searchClose = $("et_divi_100_custom_search_fields--close"),
-    searchHide = $("et_divi_100_custom_search_fields--hide");
-  searchShow = $("et_divi_100_custom_search_fields--visible");
+    searchHide = $("et_divi_100_custom_search_fields--hide"),
+    searchShow = $("et_divi_100_custom_search_fields--visible");
 
   // Appends current search to body
   // Replaces .et_search_outer with .et_divi_100_custom_search_fields
@@ -25,6 +25,8 @@ jQuery(document).ready(function ($) {
   });
 
   // Disables default click events
+  $("#et_top_search").unbind('click');
+
   $("#et_search_icon").click(function () {
     return false;
   });
