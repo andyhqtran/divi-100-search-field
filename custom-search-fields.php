@@ -60,9 +60,10 @@ class ET_Divi_100_Custom_Search_Fields {
 	 * @return void
 	 */
 	private function init(){
-		add_action( 'admin_menu',         array( $this, 'add_submenu' ), 30 ); // Make sure the priority is higher than Divi 100's add_menu()
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ) );
-		add_filter( 'body_class',         array( $this, 'body_class' ) );
+		add_action( 'admin_menu',            array( $this, 'add_submenu' ), 30 ); // Make sure the priority is higher than Divi 100's add_menu()
+		add_action( 'admin_enqueue_scripts', array( $this, 'add_submenu_scripts' ) );
+		add_action( 'wp_enqueue_scripts',    array( $this, 'enqueue_frontend_scripts' ) );
+		add_filter( 'body_class',            array( $this, 'body_class' ) );
 	}
 
 	/**
@@ -78,6 +79,19 @@ class ET_Divi_100_Custom_Search_Fields {
 			$this->plugin_prefix . 'options',
 			array( $this, 'render_options_page' )
 		);
+	}
+
+	/**
+	 * Add dashboard scripts
+	 * @return void
+	 */
+	function add_submenu_scripts() {
+		if ( isset( $_GET['page'] ) && $this->plugin_prefix . 'options' === $_GET['page'] ) {
+			wp_enqueue_script( $this->plugin_prefix . 'dashboard-scripts', plugin_dir_url( __FILE__ ) . 'js/dashboard-scripts.js', array( 'jquery' ), '0.0.1', true );
+			wp_localize_script( $this->plugin_prefix . 'dashboard-scripts', str_replace('-', '', $this->plugin_prefix ), array(
+				'preview_dir_url' => plugin_dir_url( __FILE__ ) . 'preview/',
+			) );
+		}
 	}
 
 	/**
@@ -140,7 +154,7 @@ class ET_Divi_100_Custom_Search_Fields {
 								<label for="search-field-style"><?php _e( 'Select Style' ); ?></label>
 							</th>
 							<td>
-								<select name="search-field-style" id="search-field-style">
+								<select name="search-field-style" id="search-field-style" data-preview-prefix="style-">
 									<?php
 									// Get saved style
 									$csf_style = $this->get_selected_style();
@@ -157,6 +171,11 @@ class ET_Divi_100_Custom_Search_Fields {
 									?>
 								</select>
 								<p class="description"><?php _e( 'Proper description goes here' ); ?></p>
+								<div class="option-preview" style="margin-top: 20px; min-height: 182px; ">
+								<?php if ( '' !== $csf_style ) { ?>
+									<img src="<?php echo plugin_dir_url( __FILE__ ) . 'preview/style-' . $csf_style . '.gif'; ?>">
+								<?php } ?>
+								</div>
 							</td>
 						</tr>
 					</tbody>
