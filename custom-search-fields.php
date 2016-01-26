@@ -88,7 +88,7 @@ class ET_Divi_100_Custom_Search_Fields {
 	function add_submenu_scripts() {
 		if ( isset( $_GET['page'] ) && $this->plugin_prefix . 'options' === $_GET['page'] ) {
 			wp_enqueue_script( $this->plugin_prefix . 'dashboard-scripts', plugin_dir_url( __FILE__ ) . 'js/dashboard-scripts.js', array( 'jquery' ), '0.0.1', true );
-			wp_localize_script( $this->plugin_prefix . 'dashboard-scripts', str_replace('-', '', $this->plugin_prefix ), array(
+			wp_localize_script( $this->plugin_prefix . 'dashboard-scripts', $this->main_prefix, array(
 				'preview_dir_url' => plugin_dir_url( __FILE__ ) . 'preview/',
 			) );
 		}

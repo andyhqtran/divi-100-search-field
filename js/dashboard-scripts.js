@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
 			preview_file     = preview_prefix + selected_value,
 			$preview_wrapper = $select.parents('td').find('.option-preview'),
 			$preview         = $('<img />', {
-				src : et_divi_100_custom_search_fields.preview_dir_url + preview_file + '.gif'
+				src : et_divi_100_.preview_dir_url + preview_file + '.gif'
 			});
 
 		if( selected_value !== '' ) {
