@@ -7,11 +7,13 @@ jQuery(document).ready(function ($) {
 			selected_value   = $selected_option.val(),
 			preview_file     = preview_prefix + selected_value,
 			$preview_wrapper = $select.parents('td').find('.option-preview'),
-			$preview         = $('<img />', {
+			$preview;
+
+		if( selected_value !== '' ) {
+			$preview = $('<img />', {
 				src : et_divi_100_.preview_dir_url + preview_file + '.gif'
 			});
 
-		if( selected_value !== '' ) {
 			$preview_wrapper.css({ 'minHeight' : 182 }).html( $preview );
 		} else {
 			$preview_wrapper.css({ 'minHeight' : '' }).empty();
