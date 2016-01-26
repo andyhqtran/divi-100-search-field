@@ -171,7 +171,7 @@ class ET_Divi_100_Custom_Search_Fields {
 									?>
 								</select>
 								<p class="description"><?php _e( 'Proper description goes here' ); ?></p>
-								<div class="option-preview" style="margin-top: 20px; min-height: 182px; ">
+								<div class="option-preview" style="margin-top: 20px; <?php echo ( '' !== $csf_style ) ? 'min-height: 182px; ' : ''; ?>">
 								<?php if ( '' !== $csf_style ) { ?>
 									<img src="<?php echo plugin_dir_url( __FILE__ ) . 'preview/style-' . $csf_style . '.gif'; ?>">
 								<?php } ?>

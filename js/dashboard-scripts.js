@@ -12,11 +12,9 @@ jQuery(document).ready(function ($) {
 			});
 
 		if( selected_value !== '' ) {
-			$preview_wrapper.show();
-			$preview_wrapper.html( $preview );
+			$preview_wrapper.css({ 'minHeight' : 182 }).html( $preview );
 		} else {
-			$preview_wrapper.hide();
-			$preview_wrapper.empty();
+			$preview_wrapper.css({ 'minHeight' : '' }).empty();
 		}
 	});
 });
