@@ -6,7 +6,7 @@
 */
 
 /*
-* Plugin Name: Custom Search Fields
+* Plugin Name: Divi 100 Search Fields
 * Plugin URI: https://elegantthemes.com/
 * Description: This plugin gives you the option to choose between 4 different search variations.
 * Author: Elegant Themes
