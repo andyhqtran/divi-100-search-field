@@ -137,7 +137,7 @@ class ET_Divi_100_Custom_Search_Field {
 		if ( is_admin() ) {
 			$settings_args = array(
 				'plugin_id'       => $this->config['plugin_id'],
-				'preview_dir_url' => plugin_dir_url( __FILE__ ) . 'preview/',
+				'preview_dir_url' => plugin_dir_url( __FILE__ ) . 'assets/preview/',
 				'title'           => __( 'Custom Search Field' ),
 				'description'     => __( 'Nullam quis risus eget urna mollis ornare vel eu leo.' ),
 				'fields' => array(
